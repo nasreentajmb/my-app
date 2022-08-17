@@ -4,7 +4,8 @@ pipeline {
   stages{
     stage("Maven Build"){
       steps{
-        sh "mvn clean package"
+        def mvnHome=tool name: 'Maven-3', type: 'maven'
+        sh "${mvnHome}/bin/mvn clean package"
       }
     }
   }
