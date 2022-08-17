@@ -1,16 +1,9 @@
 node {
-  agent any
-  stages{
       stage('SCM checkout'){
-        steps{
           git 'https://github.com/nasreentajmb/my-app.git'
-        }
-      }
-    stage("Maven Build"){
-      steps{
+       }
+      stage("Maven Build"){
         def mvnHome = tool name: 'Maven-3', type: 'maven'
         sh "${mvnHome}/bin/mvn package"
       }
-    }
-  }
 }
