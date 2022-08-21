@@ -4,7 +4,7 @@ pipeline {
       maven 'Maven-3'
   }
   stages{
-      stage('SCM checkout'){
+      stage('git-SCM checkout'){
         steps{
           git 'https://github.com/nasreentajmb/my-app.git'
         }
